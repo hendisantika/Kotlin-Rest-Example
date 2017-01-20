@@ -73,10 +73,72 @@
 
     <build>
         <plugins>
+            <!--<plugin>-->
+                <!--<groupId>org.jetbrains.kotlin</groupId>-->
+                <!--<artifactId>kotlin-maven-plugin</artifactId>-->
+                <!--<version>${kotlin.version}</version>-->
+                <!--<executions>-->
+                    <!--<execution>-->
+                        <!--<id>compile</id>-->
+                        <!--<phase>compile</phase>-->
+                        <!--<goals>-->
+                            <!--<goal>compile</goal>-->
+                        <!--</goals>-->
+                    <!--</execution>-->
+                    <!--<execution>-->
+                        <!--<id>test-compile</id>-->
+                        <!--<phase>test-compile</phase>-->
+                        <!--<goals>-->
+                            <!--<goal>test-compile</goal>-->
+                        <!--</goals>-->
+                    <!--</execution>-->
+                <!--</executions>-->
+
+                <!--<configuration>-->
+                    <!--<compilerPlugins>-->
+                        <!--&lt;!&ndash; Or "spring" for the Spring support &ndash;&gt;-->
+                        <!--<plugin>all-open</plugin>-->
+                    <!--</compilerPlugins>-->
+
+                    <!--<pluginOptions>-->
+                        <!--&lt;!&ndash; Each annotation is placed on its own line &ndash;&gt;-->
+                        <!--<option>all-open:annotation=com.your.Annotation</option>-->
+                        <!--<option>all-open:annotation=com.their.AnotherAnnotation</option>-->
+                    <!--</pluginOptions>-->
+                <!--</configuration>-->
+
+                <!--<dependencies>-->
+                    <!--<dependency>-->
+                        <!--<groupId>org.jetbrains.kotlin</groupId>-->
+                        <!--<artifactId>kotlin-maven-allopen</artifactId>-->
+                        <!--<version>${kotlin.version}</version>-->
+                    <!--</dependency>-->
+                <!--</dependencies>-->
+
+            <!--</plugin>-->
             <plugin>
                 <groupId>org.jetbrains.kotlin</groupId>
                 <artifactId>kotlin-maven-plugin</artifactId>
                 <version>${kotlin.version}</version>
+                <configuration>
+                    <compilerPlugins>
+                        <plugin>jpa</plugin>
+                        <plugin>spring</plugin>
+                    </compilerPlugins>
+                </configuration>
+
+                <dependencies>
+                    <dependency>
+                        <groupId>org.jetbrains.kotlin</groupId>
+                        <artifactId>kotlin-maven-noarg</artifactId>
+                        <version>${kotlin.version}</version>
+                    </dependency>
+                    <dependency>
+                        <groupId>org.jetbrains.kotlin</groupId>
+                        <artifactId>kotlin-maven-allopen</artifactId>
+                        <version>${kotlin.version}</version>
+                    </dependency>
+                </dependencies>
                 <executions>
                     <execution>
                         <id>compile</id>
@@ -94,6 +156,7 @@
                     </execution>
                 </executions>
             </plugin>
+
         </plugins>
     </build>
 

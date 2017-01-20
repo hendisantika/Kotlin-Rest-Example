@@ -15,7 +15,7 @@ import org.springframework.transaction.annotation.EnableTransactionManagement
 @SpringBootApplication
 @EnableJpaRepositories
 @EnableTransactionManagement
-open class Application {
+class Application {
     @Bean
     open fun generateUsers(userRepository: UserRepository) = CommandLineRunner {
         userRepository.save(User("Hendi Santika", 22))

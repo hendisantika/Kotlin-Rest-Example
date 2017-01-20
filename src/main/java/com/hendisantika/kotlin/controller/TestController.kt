@@ -17,8 +17,8 @@ class TestController {
     private val INVALID_PARAM = "Invalid Parameter"
 
     @RequestMapping("/bulan")
-    fun mapBulan(@RequestParam nbr: Int): ResponseDTO{
-        var strBulan = when (nbr){
+    fun mapBulan(@RequestParam bln: Int): ResponseDTO{
+        var strBulan = when (bln){
             1 -> "Januari"
             2 -> "Februari"
             3 -> "Maret"
