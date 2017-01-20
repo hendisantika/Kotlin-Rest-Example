@@ -1,0 +1,12 @@
+spring:
+  profiles: local
+
+  datasource:
+    url: jdbc:h2:mem:testdb
+    username: sa
+    password: null
+    driver-class-name: org.h2.Driver
+  h2:
+    console:
+      enabled: true
+      path: /db
