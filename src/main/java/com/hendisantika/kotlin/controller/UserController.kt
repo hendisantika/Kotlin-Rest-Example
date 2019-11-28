@@ -15,9 +15,9 @@ class UserController @Autowired constructor(val userRepository: UserRepository){
     @RequestMapping("/all")
     fun getAll() = userRepository.findAll()
 
-    @RequestMapping("/find")
+    @GetMapping("/find")
     fun getByName(@RequestParam name: String) = userRepository.findByName(name)
 
-    @RequestMapping(value = "/add", method = arrayOf(RequestMethod.POST))
+    @PostMapping("/add")
     fun addUser(@RequestBody user: User) = userRepository.save(user)
 }

@@ -17,7 +17,7 @@ import org.springframework.transaction.annotation.EnableTransactionManagement
 @EnableTransactionManagement
 class Application {
     @Bean
-    open fun generateUsers(userRepository: UserRepository) = CommandLineRunner {
+    fun generateUsers(userRepository: UserRepository) = CommandLineRunner {
         userRepository.save(User("Hendi Santika", 22))
         userRepository.save(User("Uzumaki Naruto", 24))
     }
